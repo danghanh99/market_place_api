@@ -1,8 +1,8 @@
 require "rails_helper"
 
 RSpec.describe User, type: :model do
-  before { FactoryGirl.create(:user) }
-  before { @user = FactoryGirl.build(:user) }
+  before { FactoryBot.create(:user) }
+  before { @user = FactoryBot.build(:user) }
   subject { @user }
 
   it { should respond_to(:email) }
