@@ -12,7 +12,7 @@ describe Authenticable do
     before do
       @user = FactoryBot.create :user
       request.headers["Authorization"] = @user.auth_token
-      authentication.to receive(:request).and_return(request)
+      allow(authentication).to receive(:request).and_return(request)
     end
     it "returns the user from the authorization header" do
       expect(authentication.current_user.auth_token).to eql @user.auth_token
